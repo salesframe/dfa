@@ -2,6 +2,261 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _createSuper(Derived) {
+  return function () {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (_isNativeReflectConstruct()) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
+function _superPropBase(object, property) {
+  while (!Object.prototype.hasOwnProperty.call(object, property)) {
+    object = _getPrototypeOf(object);
+    if (object === null) break;
+  }
+
+  return object;
+}
+
+function _get(target, property, receiver) {
+  if (typeof Reflect !== "undefined" && Reflect.get) {
+    _get = Reflect.get;
+  } else {
+    _get = function _get(target, property, receiver) {
+      var base = _superPropBase(target, property);
+
+      if (!base) return;
+      var desc = Object.getOwnPropertyDescriptor(base, property);
+
+      if (desc.get) {
+        return desc.get.call(receiver);
+      }
+
+      return desc.value;
+    };
+  }
+
+  return _get(target, property, receiver || target);
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function _createForOfIteratorHelper(o) {
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {
+      var i = 0;
+
+      var F = function () {};
+
+      return {
+        s: F,
+        n: function () {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function (e) {
+          throw e;
+        },
+        f: F
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var it,
+      normalCompletion = true,
+      didErr = false,
+      err;
+  return {
+    s: function () {
+      it = o[Symbol.iterator]();
+    },
+    n: function () {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function (e) {
+      didErr = true;
+      err = e;
+    },
+    f: function () {
+      try {
+        if (!normalCompletion && it.return != null) it.return();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
 /**
  * Returns a new set representing the union of a and b.
  */
@@ -15,8 +270,18 @@ function union(a, b) {
  */
 
 function addAll(a, b) {
-  for (var x of b) {
-    a.add(x);
+  var _iterator = _createForOfIteratorHelper(b),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var x = _step.value;
+      a.add(x);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
 }
 /**
@@ -27,10 +292,21 @@ function equal(a, b) {
   if (a === b) return true;
   if (a.size !== b.size) return false;
 
-  for (var x of a) {
-    if (!b.has(x)) {
-      return false;
+  var _iterator2 = _createForOfIteratorHelper(a),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var x = _step2.value;
+
+      if (!b.has(x)) {
+        return false;
+      }
     }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
   }
 
   return true;
@@ -40,179 +316,291 @@ function equal(a, b) {
  * Base AST node
  */
 
-class Node {
-  constructor() {
+var Node = /*#__PURE__*/function () {
+  function Node() {
+    _classCallCheck(this, Node);
+
     Object.defineProperty(this, 'followpos', {
       value: new Set()
     });
   }
 
-  calcFollowpos() {
-    for (var key in this) {
-      if (this[key] instanceof Node) {
-        this[key].calcFollowpos();
+  _createClass(Node, [{
+    key: "calcFollowpos",
+    value: function calcFollowpos() {
+      for (var key in this) {
+        if (this[key] instanceof Node) {
+          this[key].calcFollowpos();
+        }
       }
     }
-  }
+  }]);
 
-}
+  return Node;
+}();
 /**
  * Represents a variable reference
  */
 
-class Variable extends Node {
-  constructor(name) {
-    super();
-    this.name = name;
+var Variable = /*#__PURE__*/function (_Node) {
+  _inherits(Variable, _Node);
+
+  var _super = _createSuper(Variable);
+
+  function Variable(name) {
+    var _this;
+
+    _classCallCheck(this, Variable);
+
+    _this = _super.call(this);
+    _this.name = name;
+    return _this;
   }
 
-  copy() {
-    return new Variable(this.name);
-  }
+  _createClass(Variable, [{
+    key: "copy",
+    value: function copy() {
+      return new Variable(this.name);
+    }
+  }]);
 
-}
+  return Variable;
+}(Node);
 /**
  * Represents a comment
  */
 
-class Comment extends Node {
-  constructor(value) {
-    super();
-    this.value = value;
+var Comment = /*#__PURE__*/function (_Node2) {
+  _inherits(Comment, _Node2);
+
+  var _super2 = _createSuper(Comment);
+
+  function Comment(value) {
+    var _this2;
+
+    _classCallCheck(this, Comment);
+
+    _this2 = _super2.call(this);
+    _this2.value = value;
+    return _this2;
   }
 
-}
+  return Comment;
+}(Node);
 /**
  * Represents an assignment statement.
  * e.g. `variable = expression;`
  */
 
-class Assignment extends Node {
-  constructor(variable, expression) {
-    super();
-    this.variable = variable;
-    this.expression = expression;
+var Assignment = /*#__PURE__*/function (_Node3) {
+  _inherits(Assignment, _Node3);
+
+  var _super3 = _createSuper(Assignment);
+
+  function Assignment(variable, expression) {
+    var _this3;
+
+    _classCallCheck(this, Assignment);
+
+    _this3 = _super3.call(this);
+    _this3.variable = variable;
+    _this3.expression = expression;
+    return _this3;
   }
 
-}
+  return Assignment;
+}(Node);
 /**
  * Represents an alternation.
  * e.g. `a | b`
  */
 
-class Alternation extends Node {
-  constructor(a, b) {
-    super();
-    this.a = a;
-    this.b = b;
+var Alternation = /*#__PURE__*/function (_Node4) {
+  _inherits(Alternation, _Node4);
+
+  var _super4 = _createSuper(Alternation);
+
+  function Alternation(a, b) {
+    var _this4;
+
+    _classCallCheck(this, Alternation);
+
+    _this4 = _super4.call(this);
+    _this4.a = a;
+    _this4.b = b;
+    return _this4;
   }
 
-  get nullable() {
-    return this.a.nullable || this.b.nullable;
-  }
+  _createClass(Alternation, [{
+    key: "copy",
+    value: function copy() {
+      return new Alternation(this.a.copy(), this.b.copy());
+    }
+  }, {
+    key: "nullable",
+    get: function get() {
+      return this.a.nullable || this.b.nullable;
+    }
+  }, {
+    key: "firstpos",
+    get: function get() {
+      return union(this.a.firstpos, this.b.firstpos);
+    }
+  }, {
+    key: "lastpos",
+    get: function get() {
+      return union(this.a.lastpos, this.b.lastpos);
+    }
+  }]);
 
-  get firstpos() {
-    return union(this.a.firstpos, this.b.firstpos);
-  }
-
-  get lastpos() {
-    return union(this.a.lastpos, this.b.lastpos);
-  }
-
-  copy() {
-    return new Alternation(this.a.copy(), this.b.copy());
-  }
-
-}
+  return Alternation;
+}(Node);
 /**
  * Represents a concatenation, or chain.
  * e.g. `a b c`
  */
 
-class Concatenation extends Node {
-  constructor(a, b) {
-    super();
-    this.a = a;
-    this.b = b;
+var Concatenation = /*#__PURE__*/function (_Node5) {
+  _inherits(Concatenation, _Node5);
+
+  var _super5 = _createSuper(Concatenation);
+
+  function Concatenation(a, b) {
+    var _this5;
+
+    _classCallCheck(this, Concatenation);
+
+    _this5 = _super5.call(this);
+    _this5.a = a;
+    _this5.b = b;
+    return _this5;
   }
 
-  get nullable() {
-    return this.a.nullable && this.b.nullable;
-  }
+  _createClass(Concatenation, [{
+    key: "calcFollowpos",
+    value: function calcFollowpos() {
+      _get(_getPrototypeOf(Concatenation.prototype), "calcFollowpos", this).call(this);
 
-  get firstpos() {
-    var s = this.a.firstpos;
+      var _iterator = _createForOfIteratorHelper(this.a.lastpos),
+          _step;
 
-    if (this.a.nullable) {
-      s = union(s, this.b.firstpos);
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var n = _step.value;
+          addAll(n.followpos, this.b.firstpos);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
     }
-
-    return s;
-  }
-
-  get lastpos() {
-    var s = this.b.lastpos;
-
-    if (this.b.nullable) {
-      s = union(s, this.a.lastpos);
+  }, {
+    key: "copy",
+    value: function copy() {
+      return new Concatenation(this.a.copy(), this.b.copy());
     }
-
-    return s;
-  }
-
-  calcFollowpos() {
-    super.calcFollowpos();
-
-    for (var n of this.a.lastpos) {
-      addAll(n.followpos, this.b.firstpos);
+  }, {
+    key: "nullable",
+    get: function get() {
+      return this.a.nullable && this.b.nullable;
     }
-  }
+  }, {
+    key: "firstpos",
+    get: function get() {
+      var s = this.a.firstpos;
 
-  copy() {
-    return new Concatenation(this.a.copy(), this.b.copy());
-  }
+      if (this.a.nullable) {
+        s = union(s, this.b.firstpos);
+      }
 
-}
+      return s;
+    }
+  }, {
+    key: "lastpos",
+    get: function get() {
+      var s = this.b.lastpos;
+
+      if (this.b.nullable) {
+        s = union(s, this.a.lastpos);
+      }
+
+      return s;
+    }
+  }]);
+
+  return Concatenation;
+}(Node);
 /**
  * Represents a repetition.
  * e.g. `a+`, `b*`, or `c?`
  */
 
-class Repeat extends Node {
-  constructor(expression, op) {
-    super();
-    this.expression = expression;
-    this.op = op;
+var Repeat = /*#__PURE__*/function (_Node6) {
+  _inherits(Repeat, _Node6);
+
+  var _super6 = _createSuper(Repeat);
+
+  function Repeat(expression, op) {
+    var _this6;
+
+    _classCallCheck(this, Repeat);
+
+    _this6 = _super6.call(this);
+    _this6.expression = expression;
+    _this6.op = op;
+    return _this6;
   }
 
-  get nullable() {
-    return this.op === '*' || this.op === '?';
-  }
+  _createClass(Repeat, [{
+    key: "calcFollowpos",
+    value: function calcFollowpos() {
+      _get(_getPrototypeOf(Repeat.prototype), "calcFollowpos", this).call(this);
 
-  get firstpos() {
-    return this.expression.firstpos;
-  }
+      if (this.op === '*' || this.op === '+') {
+        var _iterator2 = _createForOfIteratorHelper(this.lastpos),
+            _step2;
 
-  get lastpos() {
-    return this.expression.lastpos;
-  }
-
-  calcFollowpos() {
-    super.calcFollowpos();
-
-    if (this.op === '*' || this.op === '+') {
-      for (var n of this.lastpos) {
-        addAll(n.followpos, this.firstpos);
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var n = _step2.value;
+            addAll(n.followpos, this.firstpos);
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
       }
     }
-  }
+  }, {
+    key: "copy",
+    value: function copy() {
+      return new Repeat(this.expression.copy(), this.op);
+    }
+  }, {
+    key: "nullable",
+    get: function get() {
+      return this.op === '*' || this.op === '?';
+    }
+  }, {
+    key: "firstpos",
+    get: function get() {
+      return this.expression.firstpos;
+    }
+  }, {
+    key: "lastpos",
+    get: function get() {
+      return this.expression.lastpos;
+    }
+  }]);
 
-  copy() {
-    return new Repeat(this.expression.copy(), this.op);
-  }
+  return Repeat;
+}(Node);
+function buildRepetition(expression) {
+  var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var max = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Infinity;
 
-}
-function buildRepetition(expression, min = 0, max = Infinity) {
   if (min < 0 || min > max) {
     throw new Error("Invalid repetition range: ".concat(min, " ").concat(max));
   }
@@ -246,61 +634,116 @@ function concat(a, b) {
  */
 
 
-class Leaf extends Node {
-  get nullable() {
-    return false;
+var Leaf = /*#__PURE__*/function (_Node7) {
+  _inherits(Leaf, _Node7);
+
+  var _super7 = _createSuper(Leaf);
+
+  function Leaf() {
+    _classCallCheck(this, Leaf);
+
+    return _super7.apply(this, arguments);
   }
 
-  get firstpos() {
-    return new Set([this]);
-  }
+  _createClass(Leaf, [{
+    key: "nullable",
+    get: function get() {
+      return false;
+    }
+  }, {
+    key: "firstpos",
+    get: function get() {
+      return new Set([this]);
+    }
+  }, {
+    key: "lastpos",
+    get: function get() {
+      return new Set([this]);
+    }
+  }]);
 
-  get lastpos() {
-    return new Set([this]);
-  }
-
-}
+  return Leaf;
+}(Node);
 /**
  * Represents a literal value, e.g. a number
  */
 
 
-class Literal extends Leaf {
-  constructor(value) {
-    super();
-    this.value = value;
+var Literal = /*#__PURE__*/function (_Leaf) {
+  _inherits(Literal, _Leaf);
+
+  var _super8 = _createSuper(Literal);
+
+  function Literal(value) {
+    var _this7;
+
+    _classCallCheck(this, Literal);
+
+    _this7 = _super8.call(this);
+    _this7.value = value;
+    return _this7;
   }
 
-  copy() {
-    return new Literal(this.value);
-  }
+  _createClass(Literal, [{
+    key: "copy",
+    value: function copy() {
+      return new Literal(this.value);
+    }
+  }]);
 
-}
+  return Literal;
+}(Leaf);
 /**
  * Marks the end of an expression
  */
 
-class EndMarker extends Leaf {}
+var EndMarker = /*#__PURE__*/function (_Leaf2) {
+  _inherits(EndMarker, _Leaf2);
+
+  var _super9 = _createSuper(EndMarker);
+
+  function EndMarker() {
+    _classCallCheck(this, EndMarker);
+
+    return _super9.apply(this, arguments);
+  }
+
+  return EndMarker;
+}(Leaf);
 /**
  * Represents a tag
  * e.g. `a:(a b)`
  */
 
-class Tag extends Leaf {
-  constructor(name) {
-    super();
-    this.name = name;
+var Tag = /*#__PURE__*/function (_Leaf3) {
+  _inherits(Tag, _Leaf3);
+
+  var _super10 = _createSuper(Tag);
+
+  function Tag(name) {
+    var _this8;
+
+    _classCallCheck(this, Tag);
+
+    _this8 = _super10.call(this);
+    _this8.name = name;
+    return _this8;
   }
 
-  get nullable() {
-    return true;
-  }
+  _createClass(Tag, [{
+    key: "copy",
+    value: function copy() {
+      return new Tag(this.name);
+    }
+  }, {
+    key: "nullable",
+    get: function get() {
+      return true;
+    }
+  }]);
 
-  copy() {
-    return new Tag(this.name);
-  }
-
-}
+  return Tag;
+}(Leaf);
 
 var nodes = /*#__PURE__*/Object.freeze({
   __proto__: null,
@@ -342,10 +785,10 @@ peg$subclass(peg$SyntaxError, Error);
 
 peg$SyntaxError.buildMessage = function (expected, found) {
   var DESCRIBE_EXPECTATION_FNS = {
-    literal: function (expectation) {
+    literal: function literal(expectation) {
       return "\"" + literalEscape(expectation.text) + "\"";
     },
-    "class": function (expectation) {
+    "class": function _class(expectation) {
       var escapedParts = "",
           i;
 
@@ -355,13 +798,13 @@ peg$SyntaxError.buildMessage = function (expected, found) {
 
       return "[" + (expectation.inverted ? "^" : "") + escapedParts + "]";
     },
-    any: function (expectation) {
+    any: function any(expectation) {
       return "any character";
     },
-    end: function (expectation) {
+    end: function end(expectation) {
       return "end of input";
     },
-    other: function (expectation) {
+    other: function other(expectation) {
       return expectation.description;
     }
   };
@@ -439,7 +882,7 @@ function peg$parse(input, options) {
     rules: peg$parserules
   },
       peg$startRuleFunction = peg$parserules,
-      peg$c0 = function (s) {
+      peg$c0 = function peg$c0(s) {
     return s;
   },
       peg$c1 = "#",
@@ -448,76 +891,76 @@ function peg$parse(input, options) {
       peg$c4 = peg$classExpectation(["\r", "\n"], true, false),
       peg$c5 = /^[\r\n]/,
       peg$c6 = peg$classExpectation(["\r", "\n"], false, false),
-      peg$c7 = function (v) {
+      peg$c7 = function peg$c7(v) {
     return new n.Comment(v.join(''));
   },
       peg$c8 = "=",
       peg$c9 = peg$literalExpectation("=", false),
       peg$c10 = ";",
       peg$c11 = peg$literalExpectation(";", false),
-      peg$c12 = function (v, e) {
+      peg$c12 = function peg$c12(v, e) {
     return new n.Assignment(v, e);
   },
-      peg$c13 = function (v) {
+      peg$c13 = function peg$c13(v) {
     return new n.Variable(v);
   },
       peg$c14 = "|",
       peg$c15 = peg$literalExpectation("|", false),
-      peg$c16 = function (a, b) {
+      peg$c16 = function peg$c16(a, b) {
     return new n.Alternation(a, b);
   },
-      peg$c17 = function (a, b) {
+      peg$c17 = function peg$c17(a, b) {
     return new n.Concatenation(a, b);
   },
       peg$c18 = ":",
       peg$c19 = peg$literalExpectation(":", false),
-      peg$c20 = function (t, e) {
+      peg$c20 = function peg$c20(t, e) {
     return new n.Concatenation(e, new n.Tag(t));
   },
       peg$c21 = "*",
       peg$c22 = peg$literalExpectation("*", false),
-      peg$c23 = function (t) {
+      peg$c23 = function peg$c23(t) {
     return new n.Repeat(t, '*');
   },
       peg$c24 = "?",
       peg$c25 = peg$literalExpectation("?", false),
-      peg$c26 = function (t) {
+      peg$c26 = function peg$c26(t) {
     return new n.Repeat(t, '?');
   },
       peg$c27 = "+",
       peg$c28 = peg$literalExpectation("+", false),
-      peg$c29 = function (t) {
+      peg$c29 = function peg$c29(t) {
     return new n.Repeat(t, '+');
   },
       peg$c30 = "{",
       peg$c31 = peg$literalExpectation("{", false),
       peg$c32 = "}",
       peg$c33 = peg$literalExpectation("}", false),
-      peg$c34 = function (t, m) {
+      peg$c34 = function peg$c34(t, m) {
     return n.buildRepetition(t, m, m);
   },
       peg$c35 = ",",
       peg$c36 = peg$literalExpectation(",", false),
-      peg$c37 = function (t, min) {
+      peg$c37 = function peg$c37(t, min) {
     return n.buildRepetition(t, min, Infinity);
   },
-      peg$c38 = function (t, max) {
+      peg$c38 = function peg$c38(t, max) {
     return n.buildRepetition(t, 0, max);
   },
-      peg$c39 = function (t, min, max) {
+      peg$c39 = function peg$c39(t, min, max) {
     return n.buildRepetition(t, min, max);
   },
-      peg$c40 = function (x) {
+      peg$c40 = function peg$c40(x) {
     return new n.Literal(x);
   },
       peg$c41 = "(",
       peg$c42 = peg$literalExpectation("(", false),
       peg$c43 = ")",
       peg$c44 = peg$literalExpectation(")", false),
-      peg$c45 = function (e) {
+      peg$c45 = function peg$c45(e) {
     return e;
   },
-      peg$c47 = function (a, b) {
+      peg$c47 = function peg$c47(a, b) {
     return a + b.join('');
   },
       peg$c48 = "_",
@@ -526,7 +969,7 @@ function peg$parse(input, options) {
       peg$c51 = peg$classExpectation([["a", "z"], ["A", "Z"]], false, false),
       peg$c52 = /^[0-9]/,
       peg$c53 = peg$classExpectation([["0", "9"]], false, false),
-      peg$c54 = function (num) {
+      peg$c54 = function peg$c54(num) {
     return parseInt(num.join(''));
   },
       peg$c55 = /^[ \t\r\n]/,
@@ -1581,8 +2024,12 @@ var grammar = {
  * Processes a list of statements into a symbol table
  */
 
-class SymbolTable {
-  constructor(statements, externalSymbols = {}) {
+var SymbolTable = /*#__PURE__*/function () {
+  function SymbolTable(statements) {
+    var externalSymbols = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, SymbolTable);
+
     this.variables = {};
     this.symbols = {};
     this.main = null;
@@ -1591,52 +2038,69 @@ class SymbolTable {
     this.process(statements);
   }
 
-  addExternalSymbols(externalSymbols) {
-    for (var key in externalSymbols) {
-      this.variables[key] = new Literal(externalSymbols[key]);
-      this.symbols[key] = externalSymbols[key];
-      this.size++;
+  _createClass(SymbolTable, [{
+    key: "addExternalSymbols",
+    value: function addExternalSymbols(externalSymbols) {
+      for (var key in externalSymbols) {
+        this.variables[key] = new Literal(externalSymbols[key]);
+        this.symbols[key] = externalSymbols[key];
+        this.size++;
+      }
     }
-  }
+  }, {
+    key: "process",
+    value: function process(statements) {
+      var _iterator = _createForOfIteratorHelper(statements),
+          _step;
 
-  process(statements) {
-    for (var statement of statements) {
-      if (statement instanceof Assignment) {
-        this.variables[statement.variable.name] = this.processExpression(statement.expression);
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var statement = _step.value;
 
-        if (statement.expression instanceof Literal) {
-          this.symbols[statement.variable.name] = statement.expression.value;
-          this.size++;
+          if (statement instanceof Assignment) {
+            this.variables[statement.variable.name] = this.processExpression(statement.expression);
+
+            if (statement.expression instanceof Literal) {
+              this.symbols[statement.variable.name] = statement.expression.value;
+              this.size++;
+            }
+          }
         }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      this.main = this.variables.main;
+
+      if (!this.main) {
+        throw new Error('No main variable declaration found');
       }
     }
+  }, {
+    key: "processExpression",
+    value: function processExpression(expr) {
+      // Process children
+      for (var key in expr) {
+        if (expr[key] instanceof Node) {
+          expr[key] = this.processExpression(expr[key]);
+        }
+      } // Replace variable references with their values
 
-    this.main = this.variables.main;
 
-    if (!this.main) {
-      throw new Error('No main variable declaration found');
-    }
-  }
-
-  processExpression(expr) {
-    // Process children
-    for (var key in expr) {
-      if (expr[key] instanceof Node) {
-        expr[key] = this.processExpression(expr[key]);
+      if (expr instanceof Variable) {
+        var value = this.variables[expr.name];
+        if (value == null) throw new Error("Undeclared indentifier ".concat(expr.name));
+        expr = this.processExpression(value.copy());
       }
-    } // Replace variable references with their values
 
-
-    if (expr instanceof Variable) {
-      var value = this.variables[expr.name];
-      if (value == null) throw new Error("Undeclared indentifier ".concat(expr.name));
-      expr = this.processExpression(value.copy());
+      return expr;
     }
+  }]);
 
-    return expr;
-  }
-
-}
+  return SymbolTable;
+}();
 
 var END_MARKER = new EndMarker();
 /**
@@ -1676,10 +2140,21 @@ function buildDFA(root, numSymbols) {
       //  p in S that correspond to a
       var u = new Set();
 
-      for (var p of s.positions) {
-        if (p instanceof Literal && p.value === a) {
-          addAll(u, p.followpos);
+      var _iterator = _createForOfIteratorHelper(s.positions),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var p = _step.value;
+
+          if (p instanceof Literal && p.value === a) {
+            addAll(u, p.followpos);
+          }
         }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
       }
 
       if (u.size === 0) {
@@ -1709,32 +2184,45 @@ function buildDFA(root, numSymbols) {
   return dstates;
 }
 
-class State {
-  constructor(positions, len) {
-    this.positions = positions;
-    this.transitions = new Uint16Array(len);
-    this.accepting = positions.has(END_MARKER);
-    this.marked = false;
-    this.tags = new Set();
+var State = function State(positions, len) {
+  _classCallCheck(this, State);
 
-    for (var pos of positions) {
+  this.positions = positions;
+  this.transitions = new Uint16Array(len);
+  this.accepting = positions.has(END_MARKER);
+  this.marked = false;
+  this.tags = new Set();
+
+  var _iterator2 = _createForOfIteratorHelper(positions),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var pos = _step2.value;
+
       if (pos instanceof Tag) {
         this.tags.add(pos.name);
       }
     }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
   }
-
-}
+};
 
 var INITIAL_STATE = 1;
 var FAIL_STATE = 0;
 /**
  * A StateMachine represents a deterministic finite automaton.
  * It can perform matches over a sequence of values, similar to a regular expression.
+ * zilahir - modification
  */
 
-class StateMachine {
-  constructor(dfa) {
+var StateMachine = /*#__PURE__*/function () {
+  function StateMachine(dfa) {
+    _classCallCheck(this, StateMachine);
+
     this.stateTable = dfa.stateTable;
     this.accepting = dfa.accepting;
     this.tags = dfa.tags;
@@ -1745,73 +2233,134 @@ class StateMachine {
    */
 
 
-  match(str) {
-    var self = this;
-    return {
-      *[Symbol.iterator]() {
-        var state = INITIAL_STATE;
-        var startRun = null;
-        var lastAccepting = null;
-        var lastState = null;
+  _createClass(StateMachine, [{
+    key: "match",
+    value: function match(str) {
+      var self = this;
+      return _defineProperty({}, Symbol.iterator, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var state, startRun, lastAccepting, lastState, p, c;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                state = INITIAL_STATE;
+                startRun = null;
+                lastAccepting = null;
+                lastState = null;
+                p = 0;
 
-        for (var p = 0; p < str.length; p++) {
-          var c = str[p];
-          lastState = state;
-          state = self.stateTable[state][c];
+              case 5:
+                if (!(p < str.length)) {
+                  _context.next = 21;
+                  break;
+                }
 
-          if (state === FAIL_STATE) {
-            // yield the last match if any
-            if (startRun != null && lastAccepting != null && lastAccepting >= startRun) {
-              yield [startRun, lastAccepting, self.tags[lastState]];
-            } // reset the state as if we started over from the initial state
+                c = str[p];
+                lastState = state;
+                state = self.stateTable[state][c];
+
+                if (!(state === FAIL_STATE)) {
+                  _context.next = 15;
+                  break;
+                }
+
+                if (!(startRun != null && lastAccepting != null && lastAccepting >= startRun)) {
+                  _context.next = 13;
+                  break;
+                }
+
+                _context.next = 13;
+                return [startRun, lastAccepting, self.tags[lastState]];
+
+              case 13:
+                // reset the state as if we started over from the initial state
+                state = self.stateTable[INITIAL_STATE][c];
+                startRun = null;
+
+              case 15:
+                // start a run if not in the failure state
+                if (state !== FAIL_STATE && startRun == null) {
+                  startRun = p;
+                } // if accepting, mark the potential match end
 
 
-            state = self.stateTable[INITIAL_STATE][c];
-            startRun = null;
-          } // start a run if not in the failure state
+                if (self.accepting[state]) {
+                  lastAccepting = p;
+                } // reset the state to the initial state if we get into the failure state
 
 
-          if (state !== FAIL_STATE && startRun == null) {
-            startRun = p;
-          } // if accepting, mark the potential match end
+                if (state === FAIL_STATE) {
+                  state = INITIAL_STATE;
+                }
 
+              case 18:
+                p++;
+                _context.next = 5;
+                break;
 
-          if (self.accepting[state]) {
-            lastAccepting = p;
-          } // reset the state to the initial state if we get into the failure state
+              case 21:
+                if (!(startRun != null && lastAccepting != null && lastAccepting >= startRun)) {
+                  _context.next = 24;
+                  break;
+                }
 
+                _context.next = 24;
+                return [startRun, lastAccepting, self.tags[state]];
 
-          if (state === FAIL_STATE) {
-            state = INITIAL_STATE;
+              case 24:
+              case "end":
+                return _context.stop();
+            }
           }
-        } // yield the last match if any
+        }, _callee);
+      }));
+    }
+    /**
+     * For each match over the input sequence, action functions matching
+     * the tag definitions in the input pattern are called with the startIndex,
+     * endIndex, and sub-match sequence.
+     */
 
+  }, {
+    key: "apply",
+    value: function apply(str, actions) {
+      var _iterator = _createForOfIteratorHelper(this.match(str)),
+          _step;
 
-        if (startRun != null && lastAccepting != null && lastAccepting >= startRun) {
-          yield [startRun, lastAccepting, self.tags[state]];
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var _step$value = _slicedToArray(_step.value, 3),
+              start = _step$value[0],
+              end = _step$value[1],
+              tags = _step$value[2];
+
+          var _iterator2 = _createForOfIteratorHelper(tags),
+              _step2;
+
+          try {
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+              var tag = _step2.value;
+
+              if (typeof actions[tag] === 'function') {
+                actions[tag](start, end, str.slice(start, end + 1));
+              }
+            }
+          } catch (err) {
+            _iterator2.e(err);
+          } finally {
+            _iterator2.f();
+          }
         }
-      }
-
-    };
-  }
-  /**
-   * For each match over the input sequence, action functions matching
-   * the tag definitions in the input pattern are called with the startIndex,
-   * endIndex, and sub-match sequence.
-   */
-
-
-  apply(str, actions) {
-    for (var [start, end, tags] of this.match(str)) {
-      for (var tag of tags) {
-        if (typeof actions[tag] === 'function') {
-          actions[tag](start, end, str.slice(start, end + 1));
-        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
       }
     }
-  }
+  }]);
 
-}
+  return StateMachine;
+}();
 
 function parse(string, externalSymbols) {
   var ast = grammar.parse(string);
@@ -1820,9 +2369,15 @@ function parse(string, externalSymbols) {
 function build(symbolTable) {
   var states = buildDFA(symbolTable.main, symbolTable.size);
   return new StateMachine({
-    stateTable: states.map(s => Array.from(s.transitions)),
-    accepting: states.map(s => s.accepting),
-    tags: states.map(s => Array.from(s.tags))
+    stateTable: states.map(function (s) {
+      return Array.from(s.transitions);
+    }),
+    accepting: states.map(function (s) {
+      return s.accepting;
+    }),
+    tags: states.map(function (s) {
+      return Array.from(s.tags);
+    })
   });
 }
 function compile(string, externalSymbols) {

@@ -4,6 +4,7 @@ const FAIL_STATE = 0;
 /**
  * A StateMachine represents a deterministic finite automaton.
  * It can perform matches over a sequence of values, similar to a regular expression.
+ * zilahir - modification
  */
 export default class StateMachine {
   constructor(dfa) {

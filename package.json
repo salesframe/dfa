@@ -1,6 +1,6 @@
 {
-  "name": "dfa",
-  "version": "1.2.0",
+  "name": "@salesframe/dfa",
+  "version": "1.2.3",
   "description": "A state machine compiler",
   "main": "index.js",
   "devDependencies": {

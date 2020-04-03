@@ -22,7 +22,8 @@ export default {
                 'Firefox 57',
                 'Chrome 60',
                 'iOS 10',
-                'Safari 10'
+                'Safari 10',
+                'IE 11'
               ]
             }
           }
